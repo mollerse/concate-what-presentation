@@ -1,0 +1,42 @@
+{
+  "name": "concate-what-presentation",
+  "version": "1.0.0",
+  "description": "Presentation on concatenative programming",
+  "main": "index.js",
+  "scripts": {
+    "start":
+      "budo presentation.js -s index.js --live --open -- -t [ babelify --presets [ env react ] ] -t brfs",
+    "build":
+      "browserify presentation.js -o index.js -t [ babelify --presets [ env react ] ] -t brfs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollerse/concate-what-presentation.git"
+  },
+  "keywords": ["presentation"],
+  "author": "Stian Møllersen <stian.moellersen@gmail.com>",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/mollerse/concate-what-presentation/issues"
+  },
+  "homepage": "https://github.com/mollerse/concate-what-presentation#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "brfs": "^1.6.1",
+    "browserify": "^16.2.0",
+    "budo": "^11.2.0"
+  },
+  "dependencies": {
+    "ait-animation": "^0.3.0",
+    "ait-canvas": "^0.5.2",
+    "ait-dom": "^0.3.0",
+    "ait-lang": "^0.3.3",
+    "react": "^16.3.2",
+    "react-codemirror": "^1.0.0",
+    "react-dom": "^16.3.2",
+    "spectacle": "^4.2.3"
+  }
+}

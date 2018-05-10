@@ -1,0 +1,44 @@
+"cyan" strokeStyle
+250 250 translate
+
+dup2: [ dup ] dip dup ;
+dupdup: dup [ dup ] dip ;
+point: [] cons cons ;
+
+triangle:
+  beginPath
+  [ 0 -200 ] moveTo
+  [ 200 200 ] lineTo
+  [ -200 200 ] lineTo
+  closePath
+  stroke ;
+
+triangleAtPoint:
+  beginPath
+  dup2 200 - point moveTo
+  dup2 [200 +] dip 200 + point lineTo
+  [200 -] dip 200 + point lineTo
+  closePath
+  stroke ;
+
+triangleOfSize:
+  2 /
+  beginPath
+  dup neg 0 swap point moveTo
+  dup [ dup ] dip point lineTo
+  dup [ neg ] dip point lineTo
+  closePath
+  stroke ;
+
+scaleXY: dup scale ;
+
+5 lineWidth
+
+triangle
+20
+[
+  0.8 scaleXY
+  PI 10 / rotate
+  triangle
+]
+times
